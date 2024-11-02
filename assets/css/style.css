@@ -1,0 +1,636 @@
+/* Page
+----------------------------------------------*/
+.page-content {
+    font-family: "Roboto", sans-serif;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar
+----------------------------------------------*/
+.navbar {
+    padding-left: 2.3rem;
+    padding-right: 2.3rem;
+}
+
+.navbar-title {
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+    color: #fff;
+}
+
+.navbar-title:hover {
+    color: #fff;
+}
+
+.navbar-icon {
+    color: #ffffff80 !important;
+    font-size: 20px;
+    flex-direction: column;
+}
+
+.navbar-icon:hover {
+    color: #fff !important;
+}
+
+/* Dropdown */
+
+.dropdown-toggle.nav-link {
+    font-size: 15px;
+    color: #ffffff90 !important;
+}
+
+.dropdown-toggle.nav-link::before {
+    content: " ";
+    margin-left: 15px;
+    font-weight: normal;
+}
+
+.dropdown-toggle.nav-link:hover {
+    color: #fff !important;
+}
+
+.dropdown-item {
+    color: #6A6A6A;
+    height: 30px;
+}
+
+.dropdown-item:hover {
+    color: #bd2333;
+    background-color: #f0f0f0;
+}
+
+/* Title
+----------------------------------------------*/
+.title_en {
+    color: #bd2333;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 2rem;
+
+}
+
+.title_br {
+    color: #bd2333;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 2rem;
+
+}
+
+/* Button Search
+----------------------------------------------*/
+.button-search {
+    margin-left: 22rem;
+    margin-right: 22rem;
+    margin-top: 1rem;
+    margin-bottom: 1.7rem;
+}
+
+.icon-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.icon-search {
+    position: absolute;
+    left: 10px;
+    color: #bd2333;
+    font-size: 18px;
+    /* icon size */
+}
+
+/* Title line dropdown button
+----------------------------------------------*/
+.div-line {
+    border-top: 1px solid #999;
+    margin: 3px 0;
+    /* margin top and button */
+}
+
+/* Button icon (all + dropdown)
+----------------------------------------------*/
+.icon {
+    color: #bd2333;
+    margin-right: 12px;
+}
+
+/* Button image (only award)
+----------------------------------------------*/
+.text-img {
+    font-size: 15px;
+    color: #6A6A6A;
+    padding: 5px;
+    text-align: center;
+    align-items: center;
+}
+
+/* Button all + search
+----------------------------------------------*/
+.dbc-button {
+    color: #6A6A6A !important;
+    /* text */
+    font-size: 15px;
+    background-color: #fff !important;
+    border: 1px solid darkgray;
+    border-radius: 20px;
+    height: 36px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    cursor: pointer !important;
+    /* change cursor on hover */
+}
+
+.dbc-button:hover {
+    border-color: #bd2333;
+    /* border color on hover */
+}
+
+.dbc-button:focus {
+    border-color: #bd2333;
+    /* border color on focus*/
+}
+
+/* Dropdown
+----------------------------------------------*/
+.Select-control {
+    border: 1px solid #999 !important;
+    border-radius: 20px;
+    font-size: 15px;
+    /* size only title (not award) */
+}
+
+.Select-control,
+.Select-multi-value-wrapper,
+.Select-menu-outer div {
+    background-color: #fff;
+}
+
+.Select-control,
+.Select,
+.Select-value-label,
+.Select-clear-zone {
+    color: #6A6A6A;
+    /* color letter dropdown */
+    height: 36px;
+    /* height button */
+}
+
+/* Menu*/
+.Select-menu-outer {
+    font-size: 14.3px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-top: 5px;
+    box-shadow: 0 2px 4px #999;
+}
+
+/* Hover */
+.Select-menu-outer div:hover {
+    background-color: #f5f5f5 !important;
+    /* select dropdown */
+    cursor: pointer;
+}
+
+/* Dropdown arrow + delete icons */
+.Select-control,
+.Select-control>span {
+    color: #fff;
+    /* color icons button */
+    background: #fff !important;
+    /* color backgrond icons button */
+}
+
+/* Placeholder */
+.Select.has-value.Select--single>.Select-control .Select-value .Select-value-label,
+.Select.has-value.is-pseudo-focused.Select--single>.Select-control .Select-value .Select-value-label {
+    color: #6A6A6A !important;
+    /* color letter button */
+}
+
+/* Placeholder */
+.Select--single>.Select-control .Select-value,
+.Select-placeholder {
+    background-color: #fff;
+    cursor: pointer;
+}
+
+/* Placeholder and icons color when not focused */
+.Select-placeholder,
+.Select-control>span {
+    color: #999 !important;
+}
+
+/* Placeholder background color on hover */
+.Select:hover .Select-control {
+    border: 1px solid #bd2333 !important;
+}
+
+/* Dropdown focused */
+.Select.is-focused:not(.is-open)>.Select-control {
+    border-color: #bd2333 !important;
+}
+
+/* Dropdown open - border radius */
+.Select.is-open>.Select-control {
+    border-radius: 20px !important;
+}
+
+/* Remove shadow on focus */
+.Select-control:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Remove shadow when focused and open */
+.Select.is-focused>.Select-control {
+    box-shadow: none !important;
+    outline: none !important;
+    border-color: #bd2333 !important;
+}
+
+/* Counter
+----------------------------------------------*/
+.counter {
+    color: #3a4552;
+    font-size: 15px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+/* Cards
+----------------------------------------------*/
+.card {
+    padding: 0px;
+    margin-bottom: 16px;
+}
+
+.card-body {
+    height: 270px;
+    padding: 0px;
+    margin-bottom: 16px;
+}
+
+.card-img {
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 16px;
+    color: #3a4552;
+    margin-left: 8px;
+    margin-top: 5px;
+    line-height: 1.2;
+}
+
+.card-text {
+    font-size: 14px;
+    color: #3a4552;
+    margin-left: 8px;
+    line-height: 1.2;
+    margin-bottom: 4px;
+}
+
+/* Pagination
+----------------------------------------------*/
+.pagination .page-link {
+    color: #3a4552;
+}
+
+/* Select button */
+.pagination .page-item.active .page-link {
+    background-color: #f5f5f5;
+    color: #3a4552;
+    border-color: #bd2333;
+    font-weight: bold;
+}
+
+.pagination .page-link:focus {
+    outline: none;
+    /* remove blue border */
+    box-shadow: none;
+    /* remove shadow */
+}
+
+/* Map
+----------------------------------------------*/
+.map {
+    height: 100%;
+    width: 100%;
+    color: #ffffff;
+}
+
+/* Radio buttons
+----------------------------------------------*/
+.radio-buttons input[type="radio"] {
+    margin-right: 10px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2px solid #999;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.radio-buttons input[type="radio"]:checked {
+    border-color: #bd2333;
+    background-color: #bd2333;
+}
+
+.radio-buttons input[type="radio"]::before {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.radio-buttons input[type="radio"]:checked::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.radio-buttons label {
+    cursor: pointer;
+    font-size: 14px;
+    color: #6A6A6A;
+}
+
+.radio-buttons input[type="radio"]:hover {
+    border-color: #bd2333;
+}
+
+/* Footer
+----------------------------------------------*/
+.footer {
+    border-width: 1px;
+    border-color: #6A6A6A;
+    height: 80px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+/* Media Queries -------------------------------------------------------------*/
+
+@media screen and (max-width: 991px) {
+    .page-content {
+        margin-left: 5px;
+        margin-right: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Navbar */
+    .navbar {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .navbar-title {
+        font-size: 20px;
+    }
+
+    /* Button Search */
+    .button-search {
+        margin-left: 10rem;
+        margin-right: 10rem;
+        margin-top: 1rem;
+        margin-bottom: 1.7rem;
+    }
+
+    /* Title */
+    .title {
+        font-size: 20px;
+        text-align: center;
+        margin-top: 1rem;
+        margin-bottom: 1px;
+    }
+
+    /* Cards */
+    .card {
+        padding: 0px;
+        margin-bottom: 8px;
+    }
+
+    .card-body {
+        height: 250px;
+        padding: 0px;
+        margin-bottom: 16px;
+    }
+
+    .card-img {
+        height: 110px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .card-title {
+        font-size: 16px;
+        color: #3a4552;
+        margin-top: 8px;
+        margin-left: 5px;
+        line-height: 1.2;
+    }
+
+    .card-text {
+        font-size: 14px;
+        margin-left: 8px;
+        line-height: 1.2;
+        margin-bottom: 8px;
+    }
+}
+
+
+@media screen and (max-width: 770px) {
+    .page-content {
+        margin-left: 1px;
+        margin-right: 1px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Navbar */
+    .navbar {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .navbar-title {
+        font-size: 20px;
+    }
+
+    /* Button Search */
+    .button-search {
+        margin-left: 1px;
+        margin-right: 1px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    /* Title */
+    .title {
+        font-size: 20px;
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 1px;
+    }
+
+    /* Hide text "All" */
+    .button-text {
+        display: none;
+    }
+
+    /* Cards */
+    .card {
+        padding: 0px;
+        margin-bottom: 8px;
+    }
+
+    .card-body {
+        height: 260px;
+        padding: 0px;
+        margin-bottom: 16px;
+    }
+
+    .card-img {
+        height: 110px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .card-title {
+        font-size: 16px;
+        margin-top: 8px;
+        margin-left: 5px;
+        line-height: 1.2;
+    }
+
+    .card-text {
+        font-size: 14px;
+        margin-left: 8px;
+        line-height: 1.2;
+        margin-bottom: 8px;
+    }
+
+    /* Toggler button */
+    .navbar-toggler {
+        color: #ffffff90;
+        border-color: #ffffff90;
+
+    }
+
+    .navbar-toggler-icon {
+        width: 1em;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.75)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    .navbar-collapse {
+        background-color: #fff;
+        border-radius: 4px;
+        max-width: 80px !important;
+        margin-left: auto;
+    }
+
+    .navbar-icon {
+        color: #6A6A6A !important;
+        font-size: 20px;
+        margin-left: 10px;
+
+    }
+
+}
+
+
+@media screen and (max-width: 400px) {
+    .page-content {
+        margin-left: 1px;
+        margin-right: 1px;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Navbar */
+    .navbar {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .navbar-title {
+        font-size: 20px;
+    }
+
+    /* Button Search */
+    .button-search {
+        margin-left: 1px;
+        margin-right: 1px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    /* Title */
+    .title {
+        font-size: 18px;
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 1px;
+    }
+
+    /* Hide text "All" */
+    .button-text {
+        display: none;
+    }
+
+    /* Cards */
+    .card {
+        padding: 0px;
+        margin-bottom: 8px;
+    }
+
+    .card-body {
+        height: 245px;
+        padding: 0px;
+        margin-bottom: 16px;
+    }
+
+    .card-img {
+        height: 110px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .card-title {
+        font-size: 14px;
+        margin-top: 6px;
+        margin-left: 5px;
+        line-height: 1;
+    }
+
+    .card-text {
+        font-size: 13px;
+        margin-left: 8px;
+        line-height: 1.2;
+        margin-bottom: 7px;
+    }
+}

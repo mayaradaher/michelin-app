@@ -17,7 +17,7 @@
     <br />
     <br />
     <strong>The app can be accessed
-    <a href="https://challengemichelin-122629525979.southamerica-east1.run.app target="_blank" style="color: #bd2333;"">here »</a>
+    <a href="https://challengemichelin-122629525979.southamerica-east1.run.app" target="_blank" style="color: #bd2333;"">here »</a>
     </strong>
   </p>
 </div>

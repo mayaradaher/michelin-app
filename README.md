@@ -45,7 +45,7 @@ ESRI, and CARTO—providing flexibility in viewing preferences.
 
 ---
 
-#### Overview
+### Overview
 
 ![App Overview](assets/readme/overview.png)
 

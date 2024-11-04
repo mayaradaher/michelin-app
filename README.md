@@ -1,24 +1,23 @@
-<br />
+<br/>
 <div align="center">
-  <a href="https://challengemichelin-122629525979.southamerica-east1.run.app" target="_blank">
-    <img src="assets/logos/favicon.svg" alt="Logo" width="50" height="50">
+  <a href="https://challengemichelin-122629525979.southamerica-east1.run.app">
+    <img src="assets/logos/favicon.svg" width="50px">
+    <h3 align="center">Michelin World Guide App</h3>
   </a>
+</div>
 
-  <h3 align="center">Michelin World Guide App</h3>
-
-  <p align="center">
+<div align="center">
     The Michelin World Guide app is your ultimate culinary companion, bringing the world’s top restaurants to your fingertips. 
     With stunning photos, it allows you to “feast with your eyes”, making it easy to explore renowned dining spots wherever 
     your travels take you.
     <br />
     <br />
-    <strong>Part of the Plotly Dash
-    <a href="https://community.plotly.com/t/autumn-app-challenge/87373" target="_blank" style="color: #bd2333;">Autumn App Challenge 2024 »</a>
+    Part of the Plotly Dash
+    <a href="https://community.plotly.com/t/autumn-app-challenge/87373" target="_blank">Autumn App Challenge 2024 »</a>
     <br />
     <br />
-    <strong>The app can be accessed
-    <a href="https://challengemichelin-122629525979.southamerica-east1.run.app" target="_blank" style="color: #bd2333;"">here »</a>
-    </strong>
+    The app can be accessed
+    <a href="https://challengemichelin-122629525979.southamerica-east1.run.app" target="_blank">here »</a>
   </p>
 </div>
 

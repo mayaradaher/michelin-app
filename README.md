@@ -24,7 +24,7 @@
 
 ---
 
-#### Key Features
+### Key Features
 
 * <span style="font-weight: normal;">**Design and Responsiveness:** CSS makes up 10% of the code, reflecting a significant 
 investment in the app’s design and responsiveness.  

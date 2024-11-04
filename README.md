@@ -53,13 +53,15 @@ ESRI, and CARTO—providing flexibility in viewing preferences.
 
 ### Built With
 
-<span style="font-weight: normal;">This project has been built using Python, Plotly Dash framework and CSS.
+<span style="font-weight: normal;">This project has been built using Python, Plotly Dash framework, CSS and Google Cloud Platform.
 
 ![Static Badge](https://img.shields.io/badge/Python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 
 ![Static Badge](https://img.shields.io/badge/Plotly-4E84C4?style=for-the-badge&logo=plotly&logoColor=white)
 
 ![Static Badge](https://img.shields.io/badge/CSS-239120?style=for-the-badge&logo=css3&logoColor=white)
+
+![Static Badge](https://img.shields.io/badge/Google%20Cloud%20Platform-4285F4?style=for-the-badge&logo=google%20cloud&logoColor=white)
 
 ---
 

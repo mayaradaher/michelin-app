@@ -21,9 +21,7 @@
   </p>
 </div>
 
----
-
-### Key Features
+## Key Features
 
 * <span style="font-weight: normal;">**Design and Responsiveness:** CSS makes up 10% of the code, reflecting a significant 
 investment in the app’s design and responsiveness.  
@@ -41,16 +39,11 @@ selection available via a dropdown menu.
 * <span style="font-weight: normal;">**Map Options:** Users can switch between three different map types—OpenStreetMap, 
 ESRI, and CARTO—providing flexibility in viewing preferences.
 
-
----
-
-### Overview
+## Overview
 
 <img src="assets/readme/overview.png" width="800px">
 
----
-
-### Built With
+## Built With
 
 <span style="font-weight: normal;">This project has been built using Python, Plotly Dash framework, CSS and Google Cloud Platform.
 
@@ -62,8 +55,6 @@ ESRI, and CARTO—providing flexibility in viewing preferences.
 
 ![Static Badge](https://img.shields.io/badge/Google%20Cloud%20Platform-4285F4?style=for-the-badge&logo=google%20cloud&logoColor=white)
 
----
-
-### Contact
+## Contact
 
 <span style="font-weight: normal;">For feedback and notes, please reach out to <a href="https://www.linkedin.com/in/mayaradaher" target="_blank" style="color: #bd2333;">Mayara Daher</a>

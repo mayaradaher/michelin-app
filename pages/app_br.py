@@ -8,6 +8,7 @@ from sentence_transformers import SentenceTransformer, util
 import torch
 from Levenshtein import distance
 
+
 dash.register_page(
     __name__,
     suppress_callback_exceptions=True,

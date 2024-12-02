@@ -10,14 +10,6 @@
     The Michelin World Guide app is your ultimate culinary companion, bringing the world’s top restaurants to your fingertips. 
     With stunning photos, it allows you to “feast with your eyes”, making it easy to explore renowned dining spots wherever 
     your travels take you.
-    <br />
-    <br />
-    Part of the Plotly Dash
-    <a href="https://community.plotly.com/t/autumn-app-challenge/87373" target="_blank">Autumn App Challenge 2024 »</a>
-    <br />
-    <br />
-    The app can be accessed
-    <a href="https://challengemichelin-122629525979.southamerica-east1.run.app" target="_blank">here »</a>
   </p>
 </div>
 
@@ -41,7 +33,7 @@ ESRI, and CARTO—providing flexibility in viewing preferences.
 
 ## Overview
 
-<img src="assets/readme/overview.png" width="800px">
+![challenge-michelin](https://github.com/user-attachments/assets/0f4dec12-b9ac-4c59-b6cc-e367a7fd5f51)
 
 ## Built With
 

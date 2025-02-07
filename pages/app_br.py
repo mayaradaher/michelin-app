@@ -1,8 +1,8 @@
 import dash
 import dash_bootstrap_components as dbc
 from dash import callback, dcc, html, Input, Output
-import polars as pl
 import plotly.express as px
+import polars as pl
 
 dash.register_page(
     __name__,
@@ -364,24 +364,28 @@ def update_map_cards(
 
     # filter search button -------------------------------------------------
     if search_input:
-        filtered_df = filtered_df[
-            filtered_df["FacilitiesAndServices_br"].str.contains(
-                search_input, case=False, na=False
-            )
-        ]
+        filtered_df = filtered_df.with_columns(
+            pl.col("FacilitiesAndServices_br").cast(pl.Utf8)
+        )
+
+        filtered_df = filtered_df.filter(
+            pl.col("FacilitiesAndServices_br").str.contains(search_input, literal=True)
+        )
 
     # filter dropdown -------------------------------------------------
     if price_dropdown and price_dropdown != "All":
-        filtered_df = filtered_df[filtered_df["Price_dollar"] == price_dropdown]
+        filtered_df = filtered_df.filter(filtered_df["Price_dollar"] == price_dropdown)
 
     if award_dropdown and award_dropdown != "All":
-        filtered_df = filtered_df[filtered_df["Award_br"] == award_dropdown]
+        filtered_df = filtered_df.filter(filtered_df["Award_br"] == award_dropdown)
 
     if cuisine_dropdown and cuisine_dropdown != "All":
-        filtered_df = filtered_df[filtered_df["Cuisine_br"] == cuisine_dropdown]
+        filtered_df = filtered_df.filter(filtered_df["Cuisine_br"] == cuisine_dropdown)
 
     if location_dropdown and location_dropdown != "All":
-        filtered_df = filtered_df[filtered_df["Location_br"] == location_dropdown]
+        filtered_df = filtered_df.filter(
+            filtered_df["Location_br"] == location_dropdown
+        )
 
     # update dropdown title -------------------------------------------------
     price_options = [
@@ -462,7 +466,7 @@ def update_map_cards(
         lat="Latitude",
         lon="Longitude",
         hover_name="Name",
-        custom_data=["Name", "Address", "FacilitiesAndServices"],
+        custom_data=["Name", "Address", "FacilitiesAndServices_br"],
         zoom=1,
         map_style=map_radio,
     )

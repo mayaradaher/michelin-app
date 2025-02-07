@@ -1,10 +1,7 @@
 import dash
 import dash_bootstrap_components as dbc
 from dash import callback, dcc, html, Input, Output
-
-
 import plotly.express as px
-
 import polars as pl
 
 dash.register_page(
@@ -367,22 +364,26 @@ def update_map_cards(
 
     # filter search button -------------------------------------------------
     if search_input:
+        filtered_df = filtered_df.with_columns(
+            pl.col("FacilitiesAndServices").cast(pl.Utf8)
+        )
+
         filtered_df = filtered_df.filter(
             pl.col("FacilitiesAndServices").str.contains(search_input, literal=True)
         )
 
     # filter dropdown ------------------------------------------------------
     if price_dropdown and price_dropdown != "All":
-        filtered_df = filtered_df[filtered_df["Price_dollar"] == price_dropdown]
+        filtered_df = filtered_df.filter(filtered_df["Price_dollar"] == price_dropdown)
 
     if award_dropdown and award_dropdown != "All":
-        filtered_df = filtered_df[filtered_df["Award"] == price_dropdown]
+        filtered_df = filtered_df.filter(filtered_df["Award"] == award_dropdown)
 
     if cuisine_dropdown and cuisine_dropdown != "All":
-        filtered_df = filtered_df[filtered_df["Cuisine"] == price_dropdown]
+        filtered_df = filtered_df.filter(filtered_df["Cuisine"] == cuisine_dropdown)
 
     if location_dropdown and location_dropdown != "All":
-        filtered_df = filtered_df[filtered_df["Location"] == price_dropdown]
+        filtered_df = filtered_df.filter(filtered_df["Location"] == location_dropdown)
 
     # update dropdown title -------------------------------------------------
     price_options = [

@@ -10,6 +10,10 @@
     The Michelin World Guide app is your ultimate culinary companion, bringing the world’s top restaurants to your fingertips. 
     With stunning photos, it allows you to “feast with your eyes”, making it easy to explore renowned dining spots wherever 
     your travels take you.
+  <br/>
+  <br/>
+  The app can be accessed
+  <a href="https://challenge-michelin.onrender.com" target="_blank">here »</a>
   </p>
 </div>
 

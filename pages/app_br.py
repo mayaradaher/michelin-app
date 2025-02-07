@@ -1,13 +1,8 @@
 import dash
 import dash_bootstrap_components as dbc
 from dash import callback, dcc, html, Input, Output
-import pandas as pd
+import polars as pl
 import plotly.express as px
-
-from sentence_transformers import SentenceTransformer, util
-import torch
-from Levenshtein import distance
-
 
 dash.register_page(
     __name__,
@@ -17,11 +12,7 @@ dash.register_page(
 )
 
 # dataframe -------------------------------------------------
-df = pd.read_parquet("data/ready/michelin_embedding.parquet")
-
-df["embedding"] = df["embedding"].apply(lambda x: torch.tensor(x, dtype=torch.float16))
-
-model = SentenceTransformer("multi-qa-mpnet-base-dot-v1")
+df = pl.read_parquet("data/ready/michelin.parquet")
 
 # body -------------------------------------------------
 layout = dbc.Container(
@@ -46,7 +37,7 @@ layout = dbc.Container(
                                         ),
                                         dcc.Input(
                                             id="search-input",
-                                            placeholder='Pesquisar restaurantes por Endereço (ex. "Rua Frei Galvão, 135")',
+                                            placeholder='Pesquisar restaurantes por Serviços/Instalações (ex. "Estacionamento")',
                                             className="dbc-button",
                                             debounce=True,
                                             style={
@@ -206,9 +197,7 @@ layout = dbc.Container(
                                     ]
                                     + [
                                         {"label": col, "value": col}
-                                        for col in sorted(
-                                            df["Location_br"].astype(str).unique()
-                                        )
+                                        for col in sorted(df["Location_br"].unique())
                                     ],
                                     value="All",
                                     clearable=True,
@@ -371,24 +360,15 @@ def update_map_cards(
     map_radio,
     search_input,
 ):
-    filtered_df = df.copy()
+    filtered_df = df.clone()
 
     # filter search button -------------------------------------------------
     if search_input:
-        search_embedding = model.encode(
-            search_input, device="cpu", convert_to_tensor=True
-        ).to(torch.float16)
-
-        # similarity and Levenshtein distance
-        df["similarity"] = df["embedding"].apply(
-            lambda x: util.pytorch_cos_sim(search_embedding, x).item()
-        )
-        df["levenshtein"] = df["Address"].apply(lambda x: distance(search_input, x))
-
-        threshold = 0.60
-        filtered_df = df[
-            (df["similarity"] >= threshold) | (df["levenshtein"] <= 2)
-        ].sort_values(by=["similarity", "levenshtein"], ascending=[False, True])
+        filtered_df = filtered_df[
+            filtered_df["FacilitiesAndServices_br"].str.contains(
+                search_input, case=False, na=False
+            )
+        ]
 
     # filter dropdown -------------------------------------------------
     if price_dropdown and price_dropdown != "All":
@@ -449,7 +429,7 @@ def update_map_cards(
         }
     ] + [
         {"label": col, "value": col}
-        for col in sorted(filtered_df["Location_br"].astype(str).unique())
+        for col in sorted(filtered_df["Location_br"].unique())
     ]
 
     award_options = [
@@ -482,7 +462,7 @@ def update_map_cards(
         lat="Latitude",
         lon="Longitude",
         hover_name="Name",
-        custom_data=["Name", "Address"],
+        custom_data=["Name", "Address", "FacilitiesAndServices"],
         zoom=1,
         map_style=map_radio,
     )
@@ -503,13 +483,9 @@ def update_map_cards(
             opacity=0.8,
             size=5,
         ),
-        # cluster=dict(
-        #     enabled=True,
-        #     color="#bd2333",
-        #     opacity=0.7,
-        #     size=20,
-        # ),
-        hovertemplate="<b> %{customdata[0]} </b><br>" + "%{customdata[1]} <br>",
+        hovertemplate="<b>  %{customdata[0]} </b><br>"
+        + "Endereço: %{customdata[1]} <br>"
+        + "Serviços/Facilidades: %{customdata[2]} <br>",
     )
 
     # page -------------------------------------------------
@@ -520,7 +496,7 @@ def update_map_cards(
     end_idx = start_idx + page_size
 
     # page active dataframe -------------------------------------------------
-    page_df = filtered_df.iloc[start_idx:end_idx]
+    page_df = filtered_df.slice(start_idx, page_size)
 
     # count restaurants -------------------------------------------------
     first_item = start_idx + 1
@@ -529,7 +505,7 @@ def update_map_cards(
 
     # create the cards for the current page -------------------------------------------------
     cards = []
-    for _, row in page_df.iterrows():
+    for row in page_df.iter_rows(named=True):
         card = dbc.Card(
             [
                 dbc.CardBody(

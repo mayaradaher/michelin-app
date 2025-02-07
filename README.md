@@ -18,10 +18,6 @@
 * <span style="font-weight: normal;">**Design and Responsiveness:** CSS makes up 10% of the code, reflecting a significant 
 investment in the app’s design and responsiveness.  
 
-* <span style="font-weight: normal;">**Advanced Search:** The app includes a Search bar where users can look up restaurants 
-by address. The search functionality is enhanced by using SentenceTransformer's 
-multi-qa-mpnet-base-dot-v1 model.  
-
 * <span style="font-weight: normal;">**Enhanced Dataset:** The dataset has been enriched with restaurant photos obtained 
 through web scraping, offering a more visual experience.  
 
@@ -44,8 +40,6 @@ ESRI, and CARTO—providing flexibility in viewing preferences.
 ![Static Badge](https://img.shields.io/badge/Plotly-4E84C4?style=for-the-badge&logo=plotly&logoColor=white)
 
 ![Static Badge](https://img.shields.io/badge/CSS-239120?style=for-the-badge&logo=css3&logoColor=white)
-
-![Static Badge](https://img.shields.io/badge/Google%20Cloud%20Platform-4285F4?style=for-the-badge&logo=google%20cloud&logoColor=white)
 
 ## Contact
 

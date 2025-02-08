@@ -360,7 +360,7 @@ def update_map_cards(
     map_radio,
     search_input,
 ):
-    filtered_df = df.clone()
+    filtered_df = df
 
     # filter search button -------------------------------------------------
     if search_input:

@@ -360,7 +360,8 @@ def update_map_cards(
     map_radio,
     search_input,
 ):
-    filtered_df = df.clone()
+
+    filtered_df = df
 
     # filter search button -------------------------------------------------
     if search_input:
@@ -372,7 +373,7 @@ def update_map_cards(
             pl.col("FacilitiesAndServices").str.contains(search_input, literal=True)
         )
 
-    # filter dropdown ------------------------------------------------------
+    # filter dropdown -------------------------------------------------
     if price_dropdown and price_dropdown != "All":
         filtered_df = filtered_df.filter(filtered_df["Price_dollar"] == price_dropdown)
 
@@ -451,9 +452,6 @@ def update_map_cards(
         }
     ] + [{"label": col, "value": col} for col in sorted(filtered_df["Award"].unique())]
 
-    # count restaurants -------------------------------------------------
-    restaurant_count = len(filtered_df)
-
     # map -------------------------------------------------
     map_fig = px.scatter_map(
         data_frame=filtered_df,
@@ -485,6 +483,9 @@ def update_map_cards(
         + "Address: %{customdata[1]} <br>"
         + "Services/Facilities: %{customdata[2]} <br>",
     )
+
+    # count restaurants -------------------------------------------------
+    restaurant_count = len(filtered_df)
 
     # page -------------------------------------------------
     page_size = 4

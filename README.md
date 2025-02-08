@@ -13,7 +13,7 @@
   <br/>
   <br/>
   The app can be accessed
-  <a href="https://challenge-michelin.onrender.com" target="_blank">here »</a>
+  <a href="https://michelinrestaurants-122629525979.southamerica-east1.run.app" target="_blank">here »</a>
   </p>
 </div>
 
@@ -44,6 +44,8 @@ ESRI, and CARTO—providing flexibility in viewing preferences.
 ![Static Badge](https://img.shields.io/badge/Plotly-4E84C4?style=for-the-badge&logo=plotly&logoColor=white)
 
 ![Static Badge](https://img.shields.io/badge/CSS-239120?style=for-the-badge&logo=css3&logoColor=white)
+
+![Static Badge](https://img.shields.io/badge/Google%20Cloud%20Platform-4285F4?style=for-the-badge&logo=google%20cloud&logoColor=white)
 
 ## Contact
 

@@ -49,9 +49,12 @@
     font-weight: normal;
 }
 
+
+
 .dropdown-toggle.nav-link:hover {
     color: #fff !important;
 }
+
 
 .dropdown-item {
     color: #6A6A6A;
@@ -160,6 +163,7 @@
 
 /* Dropdown
 ----------------------------------------------*/
+
 .Select-control {
     border: 1px solid #999 !important;
     border-radius: 20px;
@@ -633,4 +637,9 @@
         line-height: 1.2;
         margin-bottom: 7px;
     }
+}
+
+.maplibregl-control-container {
+    color: #000 !important;
+    font-size: 12px;
 }

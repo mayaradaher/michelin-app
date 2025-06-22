@@ -317,6 +317,7 @@ layout = dbc.Container(
         Output("cozinha-dropdown", "value"),
         Output("localizacao-dropdown", "value"),
         Output("paginacao", "active_page"),
+        Output("paginacao", "disabled"),  # New output to disable pagination if no results
     ],
     Input("all-button", "n_clicks"),
 )
@@ -552,7 +553,24 @@ def update_map_cards(
         counter_text,
         card_rows,
         max_page,
+        False,
         price_options,
+        cuisine_options,
+        location_options,
+        award_options,
+    )
+
+#check---------------------------
+if len(filtered_df) == 0:
+    empty_map = px.scatter_mapbox(lat=[None], lon=[None])  # Blank map
+    empty_map.update_layout(annotations=[...])  # Error message
+    return (
+        empty_map,
+        "0 restaurantes encontrados",
+        html.Div("Nenhum resultado corresponde à sua busca.", className="no-results"),
+        1,  # max_value = 1 (single page)
+        True,  # Disable pagination
+        price_options,  # (Other dropdowns unchanged)
         cuisine_options,
         location_options,
         award_options,

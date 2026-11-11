@@ -1,6 +1,7 @@
 import dash_bootstrap_components as dbc
 import dash
 from dash import Dash, dcc, html, Input, Output, State
+from flask import redirect, request
 
 app = Dash(
     __name__,
@@ -10,6 +11,13 @@ app = Dash(
 )
 
 server = app.server
+
+
+@server.before_request
+def redirect_home():
+    if request.path == "/":
+        return redirect("/en", code=301)
+
 
 # navbar -------------------------------------------------
 navbar = dbc.Navbar(
@@ -139,7 +147,7 @@ app.index_string = """
 # layout -------------------------------------------------
 app.layout = html.Div(
     [
-        dcc.Location(id="url", pathname="/en"),
+        dcc.Location(id="url"),
         navbar,
         content,
         dash.page_container,

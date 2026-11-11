@@ -108,12 +108,10 @@
     /* icon size */
 }
 
-/* Title line dropdown button
+/* Hide the decorative line below dropdown labels
 ----------------------------------------------*/
 .div-line {
-    border-top: 1px solid #999;
-    margin: 3px 0;
-    /* margin top and button */
+    display: none;
 }
 
 /* Button icon (all + dropdown)
@@ -164,100 +162,50 @@
 /* Dropdown
 ----------------------------------------------*/
 
-.Select-control {
-    border: 1px solid #999 !important;
+/* Dash 4 components use dash-* classes instead of React Select classes. */
+.dash-dropdown {
+    --Dash-Fill-Interactive-Strong: #bd2333;
+    --Dash-Fill-Interactive-Weak: #f5f5f5;
+    --Dash-Text-Strong: #6A6A6A;
+    --Dash-Text-Weak: #999;
+    width: 100%;
+    min-height: 36px;
+    border: 1px solid #999;
     border-radius: 20px;
-    font-size: 15px;
-    /* size only title (not award) */
-}
-
-.Select-control,
-.Select-multi-value-wrapper,
-.Select-menu-outer div {
-    background-color: #fff;
-}
-
-.Select-control,
-.Select,
-.Select-value-label,
-.Select-clear-zone {
+    background: #fff;
     color: #6A6A6A;
-    /* color letter dropdown */
-    height: 36px;
-    /* height button */
+    font-size: 15px;
 }
 
-/* Menu*/
-.Select-menu-outer {
+.dash-dropdown:hover,
+.dash-dropdown:focus-within,
+.dash-dropdown[data-state="open"] {
+    border-color: #bd2333;
+    box-shadow: none;
+}
+
+.dash-dropdown-content {
+    --Dash-Fill-Interactive-Strong: #bd2333;
+    --Dash-Fill-Interactive-Weak: #f5f5f5;
+    --Dash-Text-Strong: #6A6A6A;
     font-size: 14.3px;
-    background-color: #fff;
+    background: #fff;
     border-radius: 5px;
-    margin-top: 5px;
     box-shadow: 0 2px 4px #999;
 }
 
-/* Hover */
-.Select-menu-outer div:hover {
-    background-color: #f5f5f5 !important;
-    /* select dropdown */
+.dash-dropdown-option:hover {
+    background: #f5f5f5;
     cursor: pointer;
 }
 
-/* Dropdown arrow + delete icons */
-.Select-control,
-.Select-control>span {
-    color: #fff;
-    /* color icons button */
-    background: #fff !important;
-    /* color backgrond icons button */
-}
-
-/* Placeholder */
-.Select.has-value.Select--single>.Select-control .Select-value .Select-value-label,
-.Select.has-value.is-pseudo-focused.Select--single>.Select-control .Select-value .Select-value-label {
-    color: #6A6A6A !important;
-    /* color letter button */
-}
-
-/* Placeholder */
-.Select--single>.Select-control .Select-value,
-.Select-placeholder {
-    background-color: #fff;
-    cursor: pointer;
-}
-
-/* Placeholder and icons color when not focused */
-.Select-placeholder,
-.Select-control>span {
-    color: #999 !important;
-}
-
-/* Placeholder background color on hover */
-.Select:hover .Select-control {
-    border: 1px solid #bd2333 !important;
-}
-
-/* Dropdown focused */
-.Select.is-focused:not(.is-open)>.Select-control {
-    border-color: #bd2333 !important;
-}
-
-/* Dropdown open - border radius */
-.Select.is-open>.Select-control {
-    border-radius: 20px !important;
-}
-
-/* Remove shadow on focus */
-.Select-control:focus {
-    box-shadow: none !important;
-    outline: none !important;
-}
-
-/* Remove shadow when focused and open */
-.Select.is-focused>.Select-control {
-    box-shadow: none !important;
-    outline: none !important;
-    border-color: #bd2333 !important;
+/* Dash 4 radio items use a flex layout for their labels. */
+#map-radio {
+    --Dash-Fill-Interactive-Strong: #bd2333;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
 }
 
 /* Counter
